@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { projectsData } from "../data/projectsData";
+import { motion } from "framer-motion";
 
 const Project = ({ projectNumber }) => {
   const [project] = useState(projectsData[projectNumber]);
@@ -13,8 +14,20 @@ const Project = ({ projectNumber }) => {
     setRight(Math.floor(Math.random() * 200 + 100) + "px");
   }, []);
 
+  const variants = {
+    initial: { opacity: 0, x: 200 },
+    animate: { opacity: 1, transition: { delay: 0.5, duration: 0.5 }, x: 0 },
+    exit: { opacity: 0, transition: { duration: 0.5 }, x: -200 },
+  };
+
   return (
-    <div className="project-main">
+    <motion.div
+      className="project-main"
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <div className="project-content">
         <h1>{project.title}</h1>
         <p>{project.date}</p>
@@ -47,7 +60,7 @@ const Project = ({ projectNumber }) => {
         className="random-circle"
         style={{ top, right, transform: size }}
       ></span>
-    </div>
+    </motion.div>
   );
 };
 

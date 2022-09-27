@@ -30,17 +30,9 @@
     left: 60%;
     font-size: 1.1rem;
     line-height: 20px;
-    transform: translateY(-100%);
-    animation: navProject 1s ease forwards;
 
     @media screen and (max-width: 650px){
       left: 70%;
-    }
-  
-    @keyframes navProject {
-      to {
-        transform: translateY(0);
-      }
     }
 
     &:before {

@@ -16,6 +16,7 @@ const Mouse = () => {
       link.addEventListener("mouseleave", () => {
         cursor.classList.remove("hovered");
       });
+      console.log(link);
     });
   }, []);
 
