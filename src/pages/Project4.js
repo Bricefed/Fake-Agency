@@ -1,7 +1,21 @@
 import React from "react";
+import Mouse from "../components/Mouse";
+import Navigation from "../components/Navigation/Navigation";
+import Logo from "../components/Navigation/Logo";
+import Buttons from "../components/Buttons";
+import Project from "../components/Project";
 
 const Project4 = () => {
-  return <div>Projet4</div>;
+  return (
+    <main>
+      <Mouse />
+      <div className="project">
+        <Navigation />
+        <Logo />
+        <Project projectNumber={3} />
+        <Buttons left={"/project-3"} right={"/contact"} />
+      </div>
+    </main>
+  );
 };
-
 export default Project4;
